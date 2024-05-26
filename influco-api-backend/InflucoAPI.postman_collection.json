@@ -1,0 +1,1217 @@
+{
+	"info": {
+		"_postman_id": "72b65e05-db3d-4318-b4af-e4cc51346ae3",
+		"name": "Influco API",
+		"description": "Back-end API for Influco application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27146547"
+	},
+	"item": [
+		{
+			"name": "Activities",
+			"item": [
+				{
+					"name": "Get Activities",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .error-container {",
+									"        display: flex;",
+									"        justify-content: center;",
+									"        align-items: center;",
+									"        height: 100vh;",
+									"        background-color: #f8f9fa;",
+									"    }",
+									"",
+									"    .error-message {",
+									"        font-size: 24px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        color: red;",
+									"    }",
+									"</style>",
+									"",
+									"<div class=\"error-container\">",
+									"    <div class=\"error-message\">",
+									"        {{response}}",
+									"    </div>",
+									"</div>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var errorMessage = pm.response.text().match(/<pre>(.*?)<\\/pre>/)[1];",
+									"    return { response: errorMessage };",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/activity/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"activity",
+								""
+							]
+						},
+						"description": "Get activities"
+					},
+					"response": []
+				},
+				{
+					"name": "Post Activities",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .error-container {",
+									"        display: flex;",
+									"        justify-content: center;",
+									"        align-items: center;",
+									"        height: 100vh;",
+									"        background-color: #f8f9fa;",
+									"    }",
+									"",
+									"    .error-message {",
+									"        font-size: 24px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        color: red;",
+									"    }",
+									"</style>",
+									"",
+									"<div class=\"error-container\">",
+									"    <div class=\"error-message\">",
+									"        {{response}}",
+									"    </div>",
+									"</div>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var errorMessage = pm.response.text().match(/<pre>(.*?)<\\/pre>/)[1];",
+									"    return { response: errorMessage };",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"influencer\": \"651a398e162c0805ab431ad0\",\n    \"title\": \"koşu\",\n    \"location\": \"istanbul\",\n    \"sponsor\": \"nike\",\n    \"shorDescription\": \"Modada koşu\",\n    \"time\": \"7\"\n   \n  \n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/activity/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"activity",
+								""
+							]
+						},
+						"description": "Post activities."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Activitiy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .error-container {",
+									"        display: flex;",
+									"        justify-content: center;",
+									"        align-items: center;",
+									"        height: 100vh;",
+									"        background-color: #f8f9fa;",
+									"    }",
+									"",
+									"    .error-message {",
+									"        font-size: 24px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        color: red;",
+									"    }",
+									"</style>",
+									"",
+									"<div class=\"error-container\">",
+									"    <div class=\"error-message\">",
+									"        {{response}}",
+									"    </div>",
+									"</div>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var errorMessage = pm.response.text().match(/<pre>(.*?)<\\/pre>/)[1];",
+									"    return { response: errorMessage };",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJlcmtAZ21haWwuY29tIiwidXNlcklkIjoiNjUxY2RmOTNmMmM5YzVjYjMyYTU2MmQ5IiwiaWF0IjoxNjk2Mzk1NTk0LCJleHAiOjE2OTYzOTkxOTR9.VRyJdTQrarpAfg3zYbRUfGo_5W4RuYMhSkQCoQ4S644",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/activity/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"activity",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "Delete activity"
+					},
+					"response": []
+				}
+			],
+			"description": "Influencers can have activities."
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Post Post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .error-container {",
+									"        display: flex;",
+									"        justify-content: center;",
+									"        align-items: center;",
+									"        height: 100vh;",
+									"        background-color: #f8f9fa;",
+									"    }",
+									"",
+									"    .error-message {",
+									"        font-size: 24px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        color: red;",
+									"    }",
+									"</style>",
+									"",
+									"<div class=\"error-container\">",
+									"    <div class=\"error-message\">",
+									"        {{response}}",
+									"    </div>",
+									"</div>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var errorMessage = pm.response.text().match(/<pre>(.*?)<\\/pre>/)[1];",
+									"    return { response: errorMessage };",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJlc3RlQGdtYWlsLmNvbSIsInVzZXJJZCI6IjY1MWQwZmEyNjAyYjRiNDBlODk1MGY3ZSIsImlhdCI6MTY5NjQwMzU5NSwiZXhwIjoxNjk2NDA3MTk1fQ.0w0RZBQYYM6g8Ke_itLK-8luVSsa0aOem-sepHSDqfM",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \n   \"title\": \"Bugünün planı\",\n    \"description\": \"BUgün 10 saat çalışacağım\"\n\n   \n  \n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"post"
+							]
+						},
+						"description": "Create a post"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .error-container {",
+									"        display: flex;",
+									"        justify-content: center;",
+									"        align-items: center;",
+									"        height: 100vh;",
+									"        background-color: #f8f9fa;",
+									"    }",
+									"",
+									"    .error-message {",
+									"        font-size: 24px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        color: red;",
+									"    }",
+									"</style>",
+									"",
+									"<div class=\"error-container\">",
+									"    <div class=\"error-message\">",
+									"        {{response}}",
+									"    </div>",
+									"</div>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var errorMessage = pm.response.text().match(/<pre>(.*?)<\\/pre>/)[1];",
+									"    return { response: errorMessage };",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJlc3RlQGdtYWlsLmNvbSIsInVzZXJJZCI6IjY1MWQwZmEyNjAyYjRiNDBlODk1MGY3ZSIsImlhdCI6MTY5NjQwMzU5NSwiZXhwIjoxNjk2NDA3MTk1fQ.0w0RZBQYYM6g8Ke_itLK-8luVSsa0aOem-sepHSDqfM",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/post/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"post",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "Delete post"
+					},
+					"response": []
+				}
+			],
+			"description": "Influencers can have posts"
+		},
+		{
+			"name": "Series",
+			"item": [
+				{
+					"name": "Post Serie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .error-container {",
+									"        display: flex;",
+									"        justify-content: center;",
+									"        align-items: center;",
+									"        height: 100vh;",
+									"        background-color: #f8f9fa;",
+									"    }",
+									"",
+									"    .error-message {",
+									"        font-size: 24px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        color: red;",
+									"    }",
+									"</style>",
+									"",
+									"<div class=\"error-container\">",
+									"    <div class=\"error-message\">",
+									"        {{response}}",
+									"    </div>",
+									"</div>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var errorMessage = pm.response.text().match(/<pre>(.*?)<\\/pre>/)[1];",
+									"    return { response: errorMessage };",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJlc3RlQGdtYWlsLmNvbSIsInVzZXJJZCI6IjY1MWQwZmEyNjAyYjRiNDBlODk1MGY3ZSIsImlhdCI6MTY5NjQwMzU5NSwiZXhwIjoxNjk2NDA3MTk1fQ.0w0RZBQYYM6g8Ke_itLK-8luVSsa0aOem-sepHSDqfM",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \n    \"name\": \"name\",\n    \"shortDescription\": \"sho\",\n    \"price\": \"20\",\n    \"member\": \"member\",\n    \"imageUrl\": \"f\",\n    \"videoUrl\": \"f\"\n\n   \n  \n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/serie/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"serie",
+								""
+							]
+						},
+						"description": "Post a serie as an influencer"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Serie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .error-container {",
+									"        display: flex;",
+									"        justify-content: center;",
+									"        align-items: center;",
+									"        height: 100vh;",
+									"        background-color: #f8f9fa;",
+									"    }",
+									"",
+									"    .error-message {",
+									"        font-size: 24px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        color: red;",
+									"    }",
+									"</style>",
+									"",
+									"<div class=\"error-container\">",
+									"    <div class=\"error-message\">",
+									"        {{response}}",
+									"    </div>",
+									"</div>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var errorMessage = pm.response.text().match(/<pre>(.*?)<\\/pre>/)[1];",
+									"    return { response: errorMessage };",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJlc3RlQGdtYWlsLmNvbSIsInVzZXJJZCI6IjY1MWQwZmEyNjAyYjRiNDBlODk1MGY3ZSIsImlhdCI6MTY5NjQwMzU5NSwiZXhwIjoxNjk2NDA3MTk1fQ.0w0RZBQYYM6g8Ke_itLK-8luVSsa0aOem-sepHSDqfM",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/serie/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"serie",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						},
+						"description": "Delete a serie"
+					},
+					"response": []
+				}
+			],
+			"description": "Influencers can have series"
+		},
+		{
+			"name": "Feed",
+			"item": [
+				{
+					"name": "Get a Single Influencer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .error-container {",
+									"        display: flex;",
+									"        justify-content: center;",
+									"        align-items: center;",
+									"        height: 100vh;",
+									"        background-color: #f8f9fa;",
+									"    }",
+									"",
+									"    .error-message {",
+									"        font-size: 24px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        color: red;",
+									"    }",
+									"</style>",
+									"",
+									"<div class=\"error-container\">",
+									"    <div class=\"error-message\">",
+									"        {{response}}",
+									"    </div>",
+									"</div>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var errorMessage = pm.response.text().match(/<pre>(.*?)<\\/pre>/)[1];",
+									"    return { response: errorMessage };",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/influencer/651cdf93f2c9c5cb32a562d9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"influencer",
+								"651cdf93f2c9c5cb32a562d9"
+							]
+						},
+						"description": "Get a single influencer"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Brands",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .error-container {",
+									"        display: flex;",
+									"        justify-content: center;",
+									"        align-items: center;",
+									"        height: 100vh;",
+									"        background-color: #f8f9fa;",
+									"    }",
+									"",
+									"    .error-message {",
+									"        font-size: 24px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        color: red;",
+									"    }",
+									"</style>",
+									"",
+									"<div class=\"error-container\">",
+									"    <div class=\"error-message\">",
+									"        {{response}}",
+									"    </div>",
+									"</div>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var errorMessage = pm.response.text().match(/<pre>(.*?)<\\/pre>/)[1];",
+									"    return { response: errorMessage };",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/brand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand"
+							]
+						},
+						"description": "Get all brands"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Influencers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .error-container {",
+									"        display: flex;",
+									"        justify-content: center;",
+									"        align-items: center;",
+									"        height: 100vh;",
+									"        background-color: #f8f9fa;",
+									"    }",
+									"",
+									"    .error-message {",
+									"        font-size: 24px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        color: red;",
+									"    }",
+									"</style>",
+									"",
+									"<div class=\"error-container\">",
+									"    <div class=\"error-message\">",
+									"        {{response}}",
+									"    </div>",
+									"</div>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var errorMessage = pm.response.text().match(/<pre>(.*?)<\\/pre>/)[1];",
+									"    return { response: errorMessage };",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/influencer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"influencer"
+							]
+						},
+						"description": "Get influencers"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Single Brand",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .error-container {",
+									"        display: flex;",
+									"        justify-content: center;",
+									"        align-items: center;",
+									"        height: 100vh;",
+									"        background-color: #f8f9fa;",
+									"    }",
+									"",
+									"    .error-message {",
+									"        font-size: 24px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        color: red;",
+									"    }",
+									"</style>",
+									"",
+									"<div class=\"error-container\">",
+									"    <div class=\"error-message\">",
+									"        {{response}}",
+									"    </div>",
+									"</div>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var errorMessage = pm.response.text().match(/<pre>(.*?)<\\/pre>/)[1];",
+									"    return { response: errorMessage };",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/brand/651ce2242bdee194b1c9e16f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand",
+								"651ce2242bdee194b1c9e16f"
+							]
+						},
+						"description": "Get a brand"
+					},
+					"response": []
+				}
+			],
+			"description": "Main"
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Post Signup",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .error-container {",
+									"        display: flex;",
+									"        justify-content: center;",
+									"        align-items: center;",
+									"        height: 100vh;",
+									"        background-color: #f8f9fa;",
+									"    }",
+									"",
+									"    .error-message {",
+									"        font-size: 24px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        color: red;",
+									"    }",
+									"</style>",
+									"",
+									"<div class=\"error-container\">",
+									"    <div class=\"error-message\">",
+									"        {{response}}",
+									"    </div>",
+									"</div>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var errorMessage = pm.response.text().match(/<pre>(.*?)<\\/pre>/)[1];",
+									"    return { response: errorMessage };",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userType\": \"influencer\",\n    \"username\": \"no1\",\n    \"email\": \"no1@gmail.com\",\n    \"password\": \"123\"\n\n   \n  \n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signup"
+							]
+						},
+						"description": "You can signup as an influencer, user, or a brand."
+					},
+					"response": []
+				},
+				{
+					"name": "Post Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .error-container {",
+									"        display: flex;",
+									"        justify-content: center;",
+									"        align-items: center;",
+									"        height: 100vh;",
+									"        background-color: #f8f9fa;",
+									"    }",
+									"",
+									"    .error-message {",
+									"        font-size: 24px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        color: red;",
+									"    }",
+									"</style>",
+									"",
+									"<div class=\"error-container\">",
+									"    <div class=\"error-message\">",
+									"        {{response}}",
+									"    </div>",
+									"</div>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var errorMessage = pm.response.text().match(/<pre>(.*?)<\\/pre>/)[1];",
+									"    return { response: errorMessage };",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload())",
+									"",
+									"pm.environment.set(\"TOKEN\", pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJlcmtAZ21haWwuY29tIiwidXNlcklkIjoiNjUxYTViNTMwZDQxMTg2MTA1MGI1MjI2IiwiaWF0IjoxNjk2MjUxMjU5LCJleHAiOjE2OTYyNTQ4NTl9.XwfcnTGv5bfQJ-Abvxe78_OVWBhPIPuZVNXYQHp-qIo",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userType\": \"user\",\n    \"email\": \"no1@gmail.com\",\n    \"password\":\"123\"\n   \n  \n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "Login"
+					},
+					"response": []
+				},
+				{
+					"name": "Follow an Influencer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .error-container {",
+									"        display: flex;",
+									"        justify-content: center;",
+									"        align-items: center;",
+									"        height: 100vh;",
+									"        background-color: #f8f9fa;",
+									"    }",
+									"",
+									"    .error-message {",
+									"        font-size: 24px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        color: red;",
+									"    }",
+									"</style>",
+									"",
+									"<div class=\"error-container\">",
+									"    <div class=\"error-message\">",
+									"        {{response}}",
+									"    </div>",
+									"</div>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    var errorMessage = pm.response.text().match(/<pre>(.*?)<\\/pre>/)[1];",
+									"    return { response: errorMessage };",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5vMkBnbWFpbC5jb20iLCJ1c2VySWQiOiI2NTFkNGU2YWI0MjUxMzE1YzgxMTNlN2IiLCJpYXQiOjE2OTY0MjI5NDgsImV4cCI6MTY5NjQyNjU0OH0.HLGNcv-ZOsb0lRMR9ocDSdFzyDDWyiWc91uC_I10WOM",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/influencer/651d4ec9b4251315c8113e83",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"influencer",
+								"651d4ec9b4251315c8113e83"
+							]
+						},
+						"description": "Follow an influencer as an user."
+					},
+					"response": []
+				}
+			],
+			"description": "Auth operations"
+		}
+	]
+}
