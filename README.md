@@ -65,9 +65,6 @@ To get started with Influco, follow these steps:
 
 
   
-## License
-
-This project is licensed under the [MIT License.](https://choosealicense.com/licenses/mit/)
 
   
 
